@@ -1,11 +1,19 @@
 ---
-title: Notification Demo
+title: Intro
 permalink: /
 ---
-## Lorem ipsum dolor sit amet
+This site uses a very simple system for notifying visitors of updated content on one of its pages, built with [Alpine], [Eleventy] (and some good, old-fashioned [CSS]).
 
-Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+A link <!-- styled as a notification --> should appear in the upper right corner of every page, and will persist throughout until you navigate to the URL defined in the latest notification (currently `{{ (notifications | last).id | safe }}`):
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+```
+{{ notifications | dump | safe }}
+```
 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Visiting the page linked from the notification will save the 
+
+To reset the demo, click this button on any page:
+
+[Alpine]: https://alpinejs.dev
+[Eleventy]: https://11ty.dev
+[CSS]: https://css-tricks.com/css-is-in-fact-awesome/
