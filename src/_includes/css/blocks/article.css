@@ -1,0 +1,9 @@
+.article h1,
+.article h2 {
+	font-family: var( --font-sans );
+	font-weight: bold;
+}
+
+.article h1 {
+	font-size: var( --size-1 );
+}

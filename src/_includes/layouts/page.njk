@@ -1,0 +1,79 @@
+---
+layout: layouts/base.njk
+externalScripts:
+  - https://unpkg.com/alpinejs
+---
+<main
+	class="[ center container stack ][ relative ][]"
+>
+	<article
+		x-data="{}"
+		class="[ stack ][][ article ]"
+	>
+		<h1>{{ title }}</h1>
+
+		{{ content | safe }}
+
+		<button @click="$dispatch('reset')">Clear History</button>
+	</article>
+
+	<div
+		x-data="{
+			/* Properties */
+			history: {},
+
+			latest: {{ notifications | last | dump }},
+
+			get url() {
+				if( this.history.id !== this.latest.id )
+				{
+					return this.latest.url;
+				}
+			},
+
+			/* Methods */
+			init() {
+				let url = new URL( window.location.href );
+				if( url.pathname === this.latest.url )
+				{
+					this.history = this.latest;
+					localStorage.setItem( 'history', JSON.stringify( this.history ) );
+				}
+				else
+				{
+					this.history = JSON.parse( localStorage.getItem( 'history' ) ) || {};
+				}
+			},
+
+			/* Demo-only */
+			reset() {
+				localStorage.removeItem( 'history' );
+				this.history = {};
+			},
+		}"
+
+		x-on:reset.window="reset()"
+	>
+		<div
+
+			x-cloak
+			x-show="url"
+
+			class="[][][ notification ]"
+		>
+			<a x-bind:href="url">
+				<span class="[][][]">Update available!</span>
+			</a>
+		</div>
+	</div>
+
+	<footer>
+		<nav>
+			<ul class="[ stack-sm ][][]">
+				<li><a href="/">Home</a></li>
+				<li><a href="/apple/">Apple</a></li>
+				<li><a href="/banana/">Banana</a></li>
+			</ul>
+		</nav>
+	</footer>
+</main>

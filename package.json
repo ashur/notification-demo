@@ -1,0 +1,16 @@
+{
+  "name": "notification-demo",
+  "version": "1.0.0",
+  "description": "A simple notification system using Eleventy, Alpine, and some CSS",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "keywords": [],
+  "author": "Ashur Cabrera",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "markdown-it-attrs": "^4.0.0"
+  }
+}

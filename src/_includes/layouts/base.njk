@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>{{ title }}</title>
+
+	<meta name="title" content="{{ title }}">
+
+	{%- set criticalStyle -%}
+		{% include "css/reset.css" %}
+		{% include "css/global.css" %}
+		{% include "css/composition.css" %}
+		{% include "css/utilities.css" %}
+		{% include "css/blocks.css" %}
+	{%- endset -%}
+
+	<style>
+		{{ criticalStyle | safe }}
+	</style>
+
+	{% for resource in prefetch %}
+	<link rel="prefetch" href="{{ resource.href }}" as="resource.as">
+	{% endfor %}
+
+	{% for script in externalScripts %}
+	{% if script.src %}
+	<script
+		src="{{ script.src }}"
+		{% if script.defer %}defer{% endif %}
+	></script>
+	{% else %}
+	<script src="{{ script }}" defer></script>
+	{% endif %}
+	{% endfor %}
+</head>
+<body>
+	{{ content | safe }}
+</body>
+</html>
