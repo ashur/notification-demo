@@ -1,10 +1,14 @@
+---
+site:
+  title: Notification Demo
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>{{ title }}</title>
+	<title>{{ title }} | {{ site.title }}</title>
 
 	<meta name="title" content="{{ title }}">
 
@@ -36,6 +40,25 @@
 	{% endfor %}
 </head>
 <body>
-	{{ content | safe }}
+	<div class="[ center container stack ][][]">
+		<header class="[][ font-sans ][]">
+			<a href="/" class="[][ bold no-underline ][]">
+				<span role="img" aria-label="Spade">♠️</span>
+				{{ site.title }}
+			</a>
+		</header>
+
+		{{ content | safe }}
+
+		<footer class="[][ font-sans ][ page-footer ]">
+			<nav>
+				<ul class="[ stack-sm ][][]">
+					<li><a href="/apple/">Apple</a></li>
+					<li><a href="/banana/">Banana</a></li>
+					<li><a href="/carrot/">Carrot</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</div>
 </body>
 </html>

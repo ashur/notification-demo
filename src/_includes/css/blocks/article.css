@@ -7,3 +7,12 @@
 .article h1 {
 	font-size: var( --size-1 );
 }
+
+.article pre {
+	background-color: #eee;
+	padding: var( --size-0 );
+}
+
+.article p code {
+	background-color: #eee;	
+}

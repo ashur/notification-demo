@@ -1,2 +1,3 @@
 {% include "css/blocks/article.css" %}
 {% include "css/blocks/notification.css" %}
+{% include "css/blocks/page-footer.css" %}
