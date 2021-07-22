@@ -14,18 +14,18 @@ externalScripts:
 
 		{{ content | safe }}
 
-		<button @click="$dispatch('reset')">Clear History</button>
+		<button @click="$dispatch('reset')">Reset Demo</button>
 	</article>
 
 	<div
 		x-data="{
 			/* Properties */
-			history: {},
+			lastDisplayed: null,
 
 			latest: {{ notifications | last | dump }},
 
 			get url() {
-				if( this.history.id !== this.latest.id )
+				if( this.lastDisplayed !== this.latest.id )
 				{
 					return this.latest.url;
 				}
@@ -36,19 +36,19 @@ externalScripts:
 				let url = new URL( window.location.href );
 				if( url.pathname === this.latest.url )
 				{
-					this.history = this.latest;
-					localStorage.setItem( 'history', JSON.stringify( this.history ) );
+					this.lastDisplayed = this.latest.id;
+					localStorage.setItem( 'lastDisplayed', this.lastDisplayed );
 				}
 				else
 				{
-					this.history = JSON.parse( localStorage.getItem( 'history' ) ) || {};
+					this.lastDisplayed = localStorage.getItem( 'lastDisplayed' );
 				}
 			},
 
 			/* Demo-only */
 			reset() {
-				localStorage.removeItem( 'history' );
-				this.history = {};
+				localStorage.removeItem( 'lastDisplayed' );
+				this.lastDisplayed = null;
 			},
 		}"
 
