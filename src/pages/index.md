@@ -1,11 +1,11 @@
 ---
 permalink: /
 image:
-  src: balloon.jpg
-  alt: Single red balloon floating at sunset
+  src: light.jpg
+  alt: Red notification light on a table surrounded by greenery
   author:
-    url: "https://unsplash.com/@denisseleon"
-    name: "@denisseleon"
+    url: "https://unsplash.com/@lucaslaw__"
+    name: "@lucaslaw__"
 ---
 This site uses a very simple system for notifying visitors of new or updated content, built with [Alpine], [Eleventy], and some good, old-fashioned [CSS].
 
