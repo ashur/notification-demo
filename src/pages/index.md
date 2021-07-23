@@ -1,11 +1,11 @@
 ---
 permalink: /
 image:
-  src: light.jpg
-  alt: Red notification light on a table surrounded by greenery
+  src: lemon.jpg
+  alt: Lemon on lemon-colored surface
   author:
-    url: "https://unsplash.com/@lucaslaw__"
-    name: "@lucaslaw__"
+    url: "https://unsplash.com/@markusspiske"
+    name: "@markusspiske"
 ---
 This site uses a very simple system for notifying visitors of new or updated content, built with [Alpine], [Eleventy], and some good, old-fashioned [CSS].
 
