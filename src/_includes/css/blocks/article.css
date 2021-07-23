@@ -7,16 +7,17 @@
 		}
 	}
 
+@media (min-width: 36rem) {
+	.article-contents {
+		--inset-size: 0;
+	}
+}
+
 .article h1,
 .article h2 {
 	font-family: var( --font-sans );
 	font-weight: bold;
 }
-	@media (min-width: 36rem) {
-		.article-contents {
-			--inset-size: 0;
-		}
-	}
 
 .article h1 {
 	font-size: var( --size-1 );
