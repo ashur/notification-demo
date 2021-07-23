@@ -1,18 +1,33 @@
+.article {
+	--stack-lg-size: var( --size-2 );
+}
+	@media (min-width: 36rem) {
+		.article {
+			--stack-lg-size: inherit;
+		}
+	}
+
 .article h1,
 .article h2 {
 	font-family: var( --font-sans );
 	font-weight: bold;
 }
+	@media (min-width: 36rem) {
+		.article-contents {
+			--inset-size: 0;
+		}
+	}
 
 .article h1 {
 	font-size: var( --size-1 );
 }
 
 .article pre {
-	background-color: #eee;
+	background-color: #f3f3f3;
 	padding: var( --size-0 );
 }
 
 .article p code {
-	background-color: #eee;	
+	background-color: #f3f3f3;	
 }
+

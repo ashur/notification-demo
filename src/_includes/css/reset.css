@@ -85,3 +85,7 @@ em {
 	scroll-behavior: auto !important;
   }
 }
+
+button {
+  font-size: inherit;
+}

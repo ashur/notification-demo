@@ -8,11 +8,21 @@ externalScripts:
 >
 	<article
 		x-data="{}"
-		class="[ stack ][][ article ]"
+		class="[ stack-lg ][][ article ]"
 	>
-		<h1>{{ title }}</h1>
+		{% if image %}
+		{% Image "src/images/" + image.src, image.alt %}
+		{% endif %}
 
-		{{ content | safe }}
+		<div class="[ inset stack ][][ article-contents ]">
+			<h1>{{ title or site.title }}</h1>
+	
+			{{ content | safe }}
+
+			<ul>
+				<li>Photo by <a href="{{ image.author.url }}">{{ image.author.name }}</a></li>
+				<li>Text from Wikipedia</li>
+			</ul>
 
 		<button @click="$dispatch('reset')">Reset Demo</button>
 	</article>

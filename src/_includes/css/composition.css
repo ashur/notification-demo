@@ -7,6 +7,11 @@
 	max-width: var( --container-size );
 }
 
+.inset {
+	margin-right: var( --inset-size );
+	margin-left: var( --inset-size );
+}
+
 .stack-sm > * + * {
 	margin-top: var( --stack-sm-size );
 }

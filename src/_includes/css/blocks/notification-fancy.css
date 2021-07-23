@@ -1,11 +1,12 @@
 /* Containing element */
 .notification {
-	--background-color: black;
+	--background-color: #080b12;
+	--offset: var( --size-0 );
 	--size: var( --size-2 );
 
-	position: absolute;
-	top: 0;
-	right: 0;
+	position: fixed;
+	top: var( --offset );
+	right: calc( 50vw - var( --container-size) / 2 + var( --offset ) );
 
 	height: var( --size );
 	width: var( --size );
