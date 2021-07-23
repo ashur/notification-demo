@@ -47,12 +47,12 @@
 
 	/* Before animation */
 	opacity: 0;
-	transform: scale3d( 0.125, 0.125, 0.125 );
+	transform: scale3d( 0, 0, 0 );
+	border: solid 2px var( --background-color );
 }
 	.notification--visible:after {
 		opacity: 1;
 		transform: scale3d( 1, 1, 1 );
-		border: solid 2px var( --background-color );
 	}
 
 /* Icon */
@@ -78,9 +78,7 @@
 	}
 
 	.notification:after {
-		transition:
-			opacity 0.75s 1.5s,
-			transform 0.75s 1.5s;
+		transition: all 0.875s 1.5s;
 	}
 
 	.notification-icon {
