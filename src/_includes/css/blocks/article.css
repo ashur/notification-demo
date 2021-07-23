@@ -17,6 +17,7 @@
 .article h2 {
 	font-family: var( --font-sans );
 	font-weight: bold;
+	line-height: 1;
 }
 
 .article h1 {
