@@ -1,0 +1,49 @@
+<div
+	x-data="{
+		/* Properties */
+		lastDisplayed: null,
+
+		latest: {{ notifications | last | dump }},
+
+		get url() {
+			if( this.lastDisplayed !== this.latest.id )
+			{
+				return this.latest.url;
+			}
+		},
+
+		/* Methods */
+		init() {
+			let url = new URL( window.location.href );
+			if( url.pathname === this.latest.url )
+			{
+				this.lastDisplayed = this.latest.id;
+				localStorage.setItem( 'lastDisplayed', this.lastDisplayed );
+			}
+			else
+			{
+				this.lastDisplayed = localStorage.getItem( 'lastDisplayed' );
+			}
+		},
+
+		/* Demo-only */
+		reset() {
+			localStorage.removeItem( 'lastDisplayed' );
+			this.lastDisplayed = null;
+		},
+	}"
+
+	x-on:reset.window="reset()"
+>
+	<div
+		x-bind:aria-hidden="url ? '' : 'true'"
+		x-bind:class="{ 'notification--visible': url }"
+
+		class="[][][ notification ]"
+	>
+		<a x-bind:href="url">
+			<span class="[][ visually-hidden ][]">Update available!</span>
+			<img class="[][][ notification-icon ]" src="/images/bell.svg" alt="Bell">
+		</a>
+	</div>
+</div>
