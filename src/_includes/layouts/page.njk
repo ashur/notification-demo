@@ -2,6 +2,10 @@
 layout: layouts/base.njk
 externalScripts:
   - https://unpkg.com/alpinejs
+
+prefetch:
+  - href: /images/bell.svg
+    as: image
 ---
 <main
 	class="[ stack ][ relative ][]"
@@ -24,7 +28,8 @@ externalScripts:
 				<li>Text from Wikipedia</li>
 			</ul>
 
-		<button @click="$dispatch('reset')">Reset Demo</button>
+			<button x-on:click="$dispatch('reset')">Reset Demo</button>
+		</div>
 	</article>
 
 	<div
@@ -65,14 +70,14 @@ externalScripts:
 		x-on:reset.window="reset()"
 	>
 		<div
-
-			x-cloak
-			x-show="url"
+			x-bind:aria-hidden="url ? '' : 'true'"
+			x-bind:class="{ 'notification--visible': url }"
 
 			class="[][][ notification ]"
 		>
 			<a x-bind:href="url">
-				<span class="[][][]">Update available!</span>
+				<span class="[][ visually-hidden ][]">Update available!</span>
+				<img class="[][][ notification-icon ]" src="/images/bell.svg" alt="Bell">
 			</a>
 		</div>
 	</div>

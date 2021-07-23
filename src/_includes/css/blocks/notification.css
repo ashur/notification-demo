@@ -1,6 +1,94 @@
 /* Containing element */
 .notification {
+	--background-color: #080b12;
+	--offset: var( --size-0 );
+	--size: var( --size-2 );
+
+	position: fixed;
+	top: var( --offset );
+	right: calc( 50vw - var( --container-size) / 2 + var( --offset ) );
+
+	height: var( --size );
+	width: var( --size );
+
+	background: var( --background-color );
+	border-radius: var( --size );
+
+	opacity: 0;
+	transform: scale3d( 0, 0, 0 );
+}
+	.notification--visible {
+		opacity: 1;
+		transform: scale3d( 1, 1, 1 );
+	}
+
+.notification a {
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	height: 100%;
+}
+
+/* Badge */
+.notification a:after {
+	--offset: calc( var( --size--3 ) + 1px );
+	--size: var( --size--2 );
+
+	box-sizing: content-box;
+	content: "";
+	display: block;
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: var( --offset );
+	right: var( --offset );
+
+	height: var( --size );
+	width: var( --size );
+
+	border-radius: var( --size );
+	border: solid 2px var( --background-color );
+	background: red;
+
+	/* Before animation */
+	opacity: 0;
+	transform: scale3d( 0.125, 0.125, 0.125 );
+}
+	.notification--visible a:after {
+		opacity: 1;
+		transform: scale3d( 1, 1, 1 );
+		border: solid 2px var( --background-color );
+	}
+
+/* Icon */
+.notification-icon {
+	position: relative;
+	width: calc( var( --size-0 ) * 1.25 );
+
+	/* Before animation */
+	opacity: 0;
+	transform: scale3d( 1.55, 1.55, 1.55 ) rotate3d( 0, 0, 1, -5deg );
+}
+	.notification--visible .notification-icon {
+		opacity: 1;
+		transform: scale3d( 1, 1, 1 ) rotate3d( 0, 0, 1, 0deg );
+	}
+
+/* Animation */
+@media (prefers-reduced-motion: no-preference) {
+	.notification {
+		transition: 
+			opacity 0.75s 0.25s,
+			transform 0.5s 0.5s;
+	}
+
+	.notification a:after {
+		transition:
+			opacity 0.75s 1.5s,
+			transform 0.75s 1.5s;
+	}
+
+	.notification-icon {
+		transition:
+			opacity 1s 0.5s,
+			transform 1.25s 0.5s;
+	}
 }
