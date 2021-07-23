@@ -1,3 +1,10 @@
+.page-footer a {
+	text-decoration: none;
+}
+	.page-footer a:hover {
+		text-decoration: underline;
+	}
+
 .page-footer ul {
 	list-style-type: none;
 	padding: 0;
