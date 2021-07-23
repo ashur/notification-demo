@@ -33,13 +33,17 @@
 		},
 	}"
 
-	x-on:reset.window="reset()"
+	x-on:reset.window="
+		reset();
+		$nextTick( () => $dispatch( 'notify', { url: url } ) )
+	"
 >
 	<a
 		x-bind:aria-hidden="url ? '' : 'true'"
 		x-bind:aria-live="url ? 'assertive' : ''"
 		x-bind:class="{ 'notification--visible': url }"
 		x-bind:href="url"
+		x-bind:init="$nextTick( () => $dispatch( 'notify', { url: url } ) )"
 
 		class="[][][ notification ]"
 	>

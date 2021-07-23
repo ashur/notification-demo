@@ -9,13 +9,15 @@ image:
 ---
 This site uses a very simple system for notifying visitors of new or updated content, built with [Alpine], [Eleventy] (and some good, old-fashioned [CSS]).
 
-A link styled as a notification should appear in the upper right corner of every page, and will persist throughout until you navigate to the URL defined in the latest notification (currently `{{ (notifications | last).id | safe }}`):
+A link styled as a notification should appear in the upper right corner of every page; the accompanying link in the footer will be badged.
+
+These will persist throughout the site until you navigate to the URL specified in the latest [notification](https://github.com/ashur/notification-demo/blob/main/src/_data/notifications.json):
 
 ```
-{{ notifications | dump | safe }}
+{{ notifications | last | dump | safe }}
 ```
 
-Visiting the page linked from the notification saves the notification ID to `localStorage`, ensuring that it is no longer shown to the visitor.
+Visiting `{{ (notifications | last).url }}` will mark that notification as seen, suppressing notification UI until a new notification is defined and deployed.
 
 [Alpine]: https://alpinejs.dev
 [Eleventy]: https://11ty.dev

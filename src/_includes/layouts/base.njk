@@ -47,10 +47,26 @@ site:
 			<nav>
 				<div class="[ stack-sm ][][]">
 					<a href="/"><h2 class="[][ bold ][]">{{ site.title }}</h2></a>
-					<ul class="[ stack-sm ][][]">
-						<li><a href="/apple/">Apple</a></li>
-						<li><a href="/banana/">Banana</a></li>
-						<li><a href="/cranberry/">Cranberry</a></li>
+					<ul
+						x-data="{
+							notify( url ) {
+								this.url = url;
+							},
+							
+							url: null,
+						}"
+						class="[ stack-sm ][][]"
+
+						x-on:notify.window="notify($event.detail.url)"
+					>
+						{% for page in (collections.pages | sort) %}
+						<li>
+							<a
+								x-bind:class="{ badged: url === '{{ page.url }}' }"
+								href="{{ page.url }}"
+							>{{ page.data.title }}</a>
+						</li>
+						{% endfor %}
 					</ul>
 				</div>
 
