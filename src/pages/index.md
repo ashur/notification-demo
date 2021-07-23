@@ -7,7 +7,7 @@ image:
     url: "https://unsplash.com/@denisseleon"
     name: "@denisseleon"
 ---
-This site uses a very simple system for notifying visitors of new or updated content, built with [Alpine], [Eleventy] (and some good, old-fashioned [CSS]).
+This site uses a very simple system for notifying visitors of new or updated content, built with [Alpine], [Eleventy], and some good, old-fashioned [CSS].
 
 A link styled as a notification should appear in the upper right corner of every page; the accompanying link in the footer will be badged.
 
