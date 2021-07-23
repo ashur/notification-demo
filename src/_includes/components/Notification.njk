@@ -35,15 +35,18 @@
 
 	x-on:reset.window="reset()"
 >
-	<div
+	<a
 		x-bind:aria-hidden="url ? '' : 'true'"
+		x-bind:aria-live="url ? 'assertive' : ''"
 		x-bind:class="{ 'notification--visible': url }"
+		x-bind:href="url"
 
 		class="[][][ notification ]"
 	>
-		<a x-bind:href="url">
-			<span class="[][ visually-hidden ][]">Update available!</span>
-			<img class="[][][ notification-icon ]" src="/images/bell.svg" alt="Bell">
-		</a>
-	</div>
+		<span class="[][ visually-hidden ][]">Update available!</span>
+		<img class="[][][ notification-icon ]" src="/images/bell.svg" alt="Bell">
+	</a>
+	{# <div
+	>
+	</div> #}
 </div>
