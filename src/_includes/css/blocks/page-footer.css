@@ -25,6 +25,9 @@
 	height: var( --size );
 	width: var( --size );
 
+	position: relative;
+	top: -1px;
+
 	margin-left: calc( var( --size ) / var( --ratio ) );
 	border-radius: 100%;
 	background-color: red;
