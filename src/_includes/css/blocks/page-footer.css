@@ -1,3 +1,9 @@
+.page-footer {
+	font-size: calc( var( --size-0 ) * 0.875 );
+	border-top: solid #ddd 1px;
+	padding-top: var( --stack-size );
+}
+
 .page-footer a {
 	text-decoration: none;
 }
@@ -9,3 +15,14 @@
 	list-style-type: none;
 	padding: 0;
 }
+
+.page-footer nav {
+	display: grid;
+	column-gap: var( --size-1 );
+	row-gap: var( --size-1 );
+}
+	@media (min-width: 36rem) {
+		.page-footer nav {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}

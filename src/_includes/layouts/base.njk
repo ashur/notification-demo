@@ -44,13 +44,23 @@ site:
 		{{ content | safe }}
 
 		<footer class="[ inset ][ font-sans ][ page-footer ]">
-			<nav class="[ stack-sm ][][]">
-				<a href="/"><h2 class="[][ bold ][]">{{ site.title }}</h2></a>
-				<ul class="[ stack-sm ][][]">
-					<li><a href="/apple/">Apple</a></li>
-					<li><a href="/banana/">Banana</a></li>
-					<li><a href="/cranberry/">Cranberry</a></li>
-				</ul>
+			<nav>
+				<div class="[ stack-sm ][][]">
+					<a href="/"><h2 class="[][ bold ][]">{{ site.title }}</h2></a>
+					<ul class="[ stack-sm ][][]">
+						<li><a href="/apple/">Apple</a></li>
+						<li><a href="/banana/">Banana</a></li>
+						<li><a href="/cranberry/">Cranberry</a></li>
+					</ul>
+				</div>
+
+				<div class="[ stack-sm ][][]">
+					<a href="/"><h2 class="[][ bold ][]">Elsewhere</h2></a>
+					<ul class="[ stack-sm ][][]">
+						<li><a href="https://github.com/ashur/notification-demo">View Source</a></li>
+						<li><a href="https://ashur.cab/rera">@ashur</a></li>
+					</ul>
+				</div>
 			</nav>
 		</footer>
 	</div>
