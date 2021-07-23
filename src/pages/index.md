@@ -1,11 +1,11 @@
 ---
 permalink: /
 image:
-  src: light.jpg
-  alt: Close up of red light on wall
+  src: balloon.jpg
+  alt: Single red balloon floating at sunset
   author:
-    url: "https://unsplash.com/@possessedphotography"
-    name: "@possessedphotography"
+    url: "https://unsplash.com/@denisseleon"
+    name: "@denisseleon"
 ---
 This site uses a very simple system for notifying visitors of new or updated content, built with [Alpine], [Eleventy] (and some good, old-fashioned [CSS]).
 
