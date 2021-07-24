@@ -1,18 +1,20 @@
 ---
 title: Credits
 image:
-  name: Typewriter
-  src: typewriter.jpg
-  alt: Light blue typewriter on wooden surface
+  name: Bookshelf
+  src: books.jpg
+  alt: Bookshelf crammed with colorful books
   author:
-    url: "https://unsplash.com/@laurar1vera"
-    name: "@laurar1vera"
+    url: "https://unsplash.com/@riapuskas"
+    name: "@riapuskas"
 tags: ["pages", "photos"]
 ---
 
-## Icon
+Thanks to all these folks for making their work available.
 
-- Bell icon by [Alice Design](https://thenounproject.com/icon/3407997/)
+## Icons
+
+- Bell by [Alice Design](https://thenounproject.com/icon/3407997/)
 
 ## Photos
 {% for page in (collections.photos | sort) %}
@@ -21,4 +23,4 @@ tags: ["pages", "photos"]
 
 ## Text
 
-- All filler text sourced from Wikipedia.
+- All filler text copypasta'd from Wikipedia.
