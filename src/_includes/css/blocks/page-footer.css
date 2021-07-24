@@ -4,6 +4,10 @@
 	padding-top: var( --stack-size );
 }
 
+.page-footer h2 {
+	font-weight: bold;
+}
+
 .page-footer a {
 	text-decoration: none;
 }
