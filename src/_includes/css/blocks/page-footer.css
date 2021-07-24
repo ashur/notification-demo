@@ -1,6 +1,6 @@
 .page-footer {
 	font-size: calc( var( --size-0 ) * 0.875 );
-	border-top: solid #ddd 1px;
+	border-top: solid #eee 1px;
 	padding-top: var( --stack-size );
 }
 

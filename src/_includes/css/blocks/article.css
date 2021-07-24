@@ -24,12 +24,12 @@
 	font-size: var( --size-1 );
 }
 
-.article pre {
-	background-color: #f3f3f3;
-	padding: var( --size-0 );
+.article h2 {
+	margin-top: var( --size-2 );
+	border-bottom: solid #ccc 1px;
+	padding-bottom: var( --size--2 );
 }
 
 .article p code {
 	background-color: #f3f3f3;	
 }
-
