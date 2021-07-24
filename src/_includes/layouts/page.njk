@@ -13,26 +13,35 @@ prefetch:
 	{% include "components/Notification.njk" %}
 
 	<article
-		x-data="{}"
 		class="[ stack-lg ][][ article ]"
 	>
 		{% if image %}
 		{% Image "src/images/" + image.src, image.alt %}
 		{% endif %}
 
-		<div class="[ inset stack ][][ article-contents ]">
-			<h1>{{ title or site.title }}</h1>
+		<div class="[ inset stack-lg ][][]">
+			<div class="[ stack ][][ article-contents ]">
+				<h1>{{ title or site.title }}</h1>
+		
+				{{ content | safe }}
 	
-			{{ content | safe }}
-
-			<h2>Credits</h2>
-			<ul>
-				<li>Photo by <a href="{{ image.author.url }}">{{ image.author.name }}</a></li>
-				<li>Bell icon by <a href="https://thenounproject.com/icon/3407997/">Alice Design</a></li>
-				<li>Text from Wikipedia</li>
-			</ul>
-
-			<button x-on:click="$dispatch('reset')">Reset Demo</button>
+				<h2>Credits</h2>
+				<ul>
+					<li>Photo by <a href="{{ image.author.url }}">{{ image.author.name }}</a></li>
+					<li>Bell icon by <a href="https://thenounproject.com/icon/3407997/">Alice Design</a></li>
+					<li>Text from Wikipedia</li>
+				</ul>
+	
+			</div>
+	
+			<button
+				x-data="{ disabled: true }"
+				x-on:click="$dispatch('reset')"
+				x-on:notify.window="disabled = $event.detail.url !== undefined"
+				x-bind:disabled="disabled"f8d557
+				class="[][][ demo-reset ]"
+				disabled
+			>Mark as Unread</button>
 		</div>
 	</article>
 </main>
