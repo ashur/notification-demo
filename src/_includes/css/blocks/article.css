@@ -33,3 +33,13 @@
 .article p code {
 	background-color: #f3f3f3;	
 }
+
+.article blockquote {
+	border-left: solid #ddd var( --size--3 );
+	padding-left: var( --size-0 );
+	color: #555;
+}
+
+.article em {
+	font-style: italic;
+}
