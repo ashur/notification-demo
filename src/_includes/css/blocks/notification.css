@@ -18,10 +18,10 @@
 	background: var( --background-color );
 	border-radius: var( --size );
 
-	opacity: 0;
-	transform: scale3d( 0, 0, 0 );
+	opacity: 0.01;
+	transform: scale3d( 0.01, 0.01, 0.01 );
 }
-	.notification--visible {
+	.notification--visible .notification {
 		opacity: 1;
 		transform: scale3d( 1, 1, 1 );
 	}
@@ -50,7 +50,7 @@
 	transform: scale3d( 0, 0, 0 );
 	border: solid 2px var( --background-color );
 }
-	.notification--visible:after {
+	.notification--visible .notification:after {
 		opacity: 1;
 		transform: scale3d( 1, 1, 1 );
 	}

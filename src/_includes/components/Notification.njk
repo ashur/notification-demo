@@ -1,56 +1,10 @@
-<div
-	x-data="{
-		/* Properties */
-		lastDisplayed: null,
-
-		latest: {{ notifications | last | dump }},
-
-		get url() {
-			if( this.lastDisplayed !== this.latest.id )
-			{
-				return this.latest.url;
-			}
-		},
-
-		/* Methods */
-		init() {
-			let url = new URL( window.location.href );
-			if( url.pathname === this.latest.url )
-			{
-				this.lastDisplayed = this.latest.id;
-				localStorage.setItem( 'lastDisplayed', this.lastDisplayed );
-			}
-			else
-			{
-				this.lastDisplayed = localStorage.getItem( 'lastDisplayed' );
-			}
-		},
-
-		/* Demo-only */
-		reset() {
-			localStorage.removeItem( 'lastDisplayed' );
-			this.lastDisplayed = null;
-		},
-	}"
-
-	x-on:reset.window="
-		reset();
-		$nextTick( () => $dispatch( 'notify', { url: url } ) )
-	"
->
-	<a
-		x-bind:aria-hidden="url ? 'false' : 'true'"
-		x-bind:aria-live="url ? 'assertive' : ''"
-		x-bind:class="{ 'notification--visible': url }"
-		x-bind:href="url"
-		x-bind:init="$nextTick( () => $dispatch( 'notify', { url: url } ) )"
-
-		class="[][][ notification ]"
+<a class="[][][ notification ]" href="{{ (notifications | last).url }}">
+	<span class="[][ visually-hidden ][]">Update available!</span>
+	<img
+		class="[][][ notification-icon ]"
+		src="/images/bell.svg"
+		alt="Bell"
+		width="80"
+		width="96"
 	>
-		<span class="[][ visually-hidden ][]">Update available!</span>
-		<img class="[][][ notification-icon ]" src="/images/bell.svg" alt="Bell">
-	</a>
-	{# <div
-	>
-	</div> #}
-</div>
+</a>

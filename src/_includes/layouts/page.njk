@@ -1,7 +1,5 @@
 ---
 layout: layouts/base.njk
-externalScripts:
-  - https://unpkg.com/alpinejs
 
 prefetch:
   - href: /images/bell.svg
@@ -22,17 +20,13 @@ prefetch:
 		<div class="[ inset stack-lg ][][]">
 			<div class="[ stack ][][ article-contents ]">
 				<h1>{{ title or site.title }}</h1>
-		
+
 				{{ content | safe }}
 			</div>
-	
+
 			<button
-				x-data="{ disabled: true }"
-				x-on:click="$dispatch('reset')"
-				x-on:notify.window="disabled = $event.detail.url !== undefined"
-				x-bind:disabled="disabled"f8d557
+				onclick="notification.reset()"
 				class="[][][ demo-reset ]"
-				disabled
 			>Mark as Unread</button>
 		</div>
 	</article>

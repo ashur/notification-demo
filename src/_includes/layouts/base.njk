@@ -50,23 +50,15 @@ site:
 						<a href="/">{{ site.title }}</a>
 					</h2>
 					<ul
-						x-data="{
-							notify( url ) {
-								this.url = url;
-							},
-
-							url: null,
-						}"
 						class="[ stack-sm ][][]"
-
-						x-on:notify.window="notify($event.detail.url)"
 					>
 						{% for page in (collections.pages | sort) %}
-						<li>
-							<a
-								x-bind:class="{ badged: url === '{{ page.url }}' }"
-								href="{{ page.url }}"
-							>{{ page.data.title }}</a>
+						<li						
+							{% if page.url === (notifications | last).url %}
+							class="[][][ badged ]"
+							{% endif %}
+						>
+							<a href="{{ page.url }}">{{ page.data.title }}</a>
 						</li>
 						{% endfor %}
 					</ul>
@@ -82,5 +74,47 @@ site:
 			</nav>
 		</footer>
 	</div>
+
+	<script>
+		let notification = {
+			/* Properties */
+			lastDisplayed: null,
+			latestNotification: {{ notifications | last | dump | safe }},
+
+			/* Methods */
+			display() {
+				if( this.lastDisplayed !== this.latestNotification.id )
+				{
+					setTimeout( () =>
+					{
+						document.querySelector( "body" ).classList.add( "notification--visible" );
+					}, 100 );
+
+					document.querySelector( ".demo-reset" )
+						.setAttribute( "disabled", true );
+				}
+			},
+
+			init() {
+				let url = new URL( window.location.href );
+				if( url.pathname === this.latestNotification.url )
+				{
+					localStorage.setItem( 'lastDisplayed', this.latestNotification.id );
+				}
+
+				this.lastDisplayed = localStorage.getItem( 'lastDisplayed' );
+				this.display();
+			},
+
+			reset() {
+				this.lastDisplayed = null;
+				localStorage.removeItem( 'lastDisplayed' );
+
+				this.display();
+			},
+		};
+
+		notification.init();
+	</script>
 </body>
 </html>

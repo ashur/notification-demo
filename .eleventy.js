@@ -21,10 +21,6 @@ module.exports = config =>
 	config.setLibrary( "md", markdownLibrary );
 
 	/* Filters */
-	config.addFilter( "dump", value =>
-	{
-		return JSON.stringify( value, null, 4 );
-	});
 
 	/* Shortcodes */
 	config.addAsyncShortcode( "Image", async (src, alt, sizes="100vw") =>

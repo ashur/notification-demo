@@ -29,9 +29,20 @@
 	height: var( --size );
 	width: var( --size );
 
-	margin-left: calc( var( --size ) / var( --ratio ) );
 	border-radius: 100%;
 	background-color: red;
+
+	opacity: 0;
+}
+	.notification--visible .page-footer .badged:after {
+		opacity: 1;
+	}
+
+/* Animation */
+@media (prefers-reduced-motion: no-preference) {
+	.page-footer .badged:after {
+		transition: opacity 0.75s 0.5s;
+	}
 }
 
 .page-footer nav {
