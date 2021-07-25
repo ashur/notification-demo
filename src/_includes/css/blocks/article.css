@@ -31,7 +31,8 @@
 }
 
 .article p code {
-	background-color: #f3f3f3;	
+	background-color: #f3f3f3;
+	font-size: 1.125em;
 }
 
 .article blockquote {
