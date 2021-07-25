@@ -34,7 +34,7 @@
 
 	opacity: 0;
 }
-	.notification--visible .page-footer .badged:after {
+	[data-notification="visible"] .page-footer .badged:after {
 		opacity: 1;
 	}
 

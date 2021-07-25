@@ -39,7 +39,7 @@ site:
 	{% endif %}
 	{% endfor %}
 </head>
-<body>
+<body data-notification="hidden">
 	<div class="[ center container stack-lg ][][]">
 		{{ content | safe }}
 
@@ -87,7 +87,7 @@ site:
 				{
 					setTimeout( () =>
 					{
-						document.querySelector( "body" ).classList.add( "notification--visible" );
+						document.querySelector( "body" ).dataset.notification = "visible";
 					}, 100 );
 
 					document.querySelector( ".demo-reset" )

@@ -21,7 +21,7 @@
 	opacity: 0.01;
 	transform: scale3d( 0.01, 0.01, 0.01 );
 }
-	.notification--visible .notification {
+	[data-notification="visible"] .notification {
 		opacity: 1;
 		transform: scale3d( 1, 1, 1 );
 	}
@@ -50,7 +50,7 @@
 	transform: scale3d( 0, 0, 0 );
 	border: solid 2px var( --background-color );
 }
-	.notification--visible .notification:after {
+	[data-notification="visible"] .notification:after {
 		opacity: 1;
 		transform: scale3d( 1, 1, 1 );
 	}
@@ -64,7 +64,7 @@
 	opacity: 0;
 	transform: scale3d( 1.55, 1.55, 1.55 ) rotate3d( 0, 0, 1, -5deg );
 }
-	.notification--visible .notification-icon {
+	[data-notification="visible"] .notification-icon {
 		opacity: 1;
 		transform: scale3d( 1, 1, 1 ) rotate3d( 0, 0, 1, 0deg );
 	}
