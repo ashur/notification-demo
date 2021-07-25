@@ -1,0 +1,6 @@
+.aside-reset {
+	border: solid #eee 1px;
+	background-color: #f7f7f7;
+	padding: var( --size-1 );
+	font-size: calc( var( --size-0 ) * .875 );
+}

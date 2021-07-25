@@ -24,10 +24,13 @@ prefetch:
 				{{ content | safe }}
 			</div>
 
-			<button
-				onclick="notification.reset()"
-				class="[][][ demo-reset ]"
-			>Mark as Unread</button>
+			<aside class="[ center stack ][][ aside-reset ]">
+				<p>A real site probably wouldn’t give users the option to monkey with the notification state, but this is a demo so</p>
+				<button
+					onclick="notification.reset()"
+					class="[][][ demo-reset ]"
+				>Mark as Unread</button>
+			</aside>
 		</div>
 	</article>
 </main>
