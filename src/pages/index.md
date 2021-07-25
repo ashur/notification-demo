@@ -9,7 +9,7 @@ image:
     name: "@markusspiske"
 tags: ["photos"]
 ---
-This site uses a very simple system for notifying visitors of new or updated content, built with [Alpine], [Eleventy], and some good, old-fashioned [CSS].
+This site uses a very simple system for notifying visitors of new or updated content, built with [Eleventy], a little bit of vanilla JavaScript, and some good, old-fashioned [CSS].
 
 ## What it does
 
@@ -19,7 +19,6 @@ These small bits of UI are intended to alert visitors about new content they mig
 
 Visiting the page will mark the notification as seen, suppressing the icon and badge until a new notification is defined and deployed.
 
-[Alpine]: https://alpinejs.dev
 [Eleventy]: https://11ty.dev
 [CSS]: https://css-tricks.com/css-is-in-fact-awesome/
 [site deployment]: https://github.com/ashur/notification-demo/blob/main/src/_data/notifications.json
